@@ -30,6 +30,11 @@ public final class CompraFantasiaController extends HttpServlet {
 		String opcao = req.getParameter("opcao");
 
 		switch (opcao) {
+		
+		case "iniciar":
+			pagina = listarFantasias(req, resp);
+			break;
+		
 		case "listarFantasias":
 			pagina = listarFantasias(req, resp);
 			break;

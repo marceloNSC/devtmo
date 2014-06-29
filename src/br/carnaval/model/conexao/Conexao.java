@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 public final class Conexao {
 
 	private static EntityManager entity;
-	private static EntityManagerFactory entityFactory= Persistence.createEntityManagerFactory("vitrineSamp");
+	private static EntityManagerFactory entityFactory= Persistence.createEntityManagerFactory("devtmo");
 
 	private Conexao() {	
 	}

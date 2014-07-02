@@ -14,8 +14,7 @@
 				<p>Não existe fantasia para exibir.</p>
 			</center>
 		</c:if>
-
-		<table>
+		
 			<c:forEach items="${lista}" var="lista">
 				<div style="width: 80; height: 50;">
 					<img alt="" src="">
@@ -27,7 +26,7 @@
 					</p>
 				</div>
 			</c:forEach>
-		</table>
+		
 
 	
 </body>

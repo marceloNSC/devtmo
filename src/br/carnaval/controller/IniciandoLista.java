@@ -13,7 +13,8 @@ import br.carnaval.bean.Fantasia;
 import br.carnaval.model.conexao.Conexao;
 import br.carnaval.model.dao.impl.ImplFantasia;
 
-@WebServlet(name = "/IniciandoLista", urlPatterns = { "/home" })
+@WebServlet(name = "/IniciandoLista", urlPatterns = { "/listar/fantasia",
+		"/listar/*" })
 public class IniciandoLista extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -24,7 +25,8 @@ public class IniciandoLista extends HttpServlet {
 		ImplFantasia impl = new ImplFantasia(Conexao.getInstance());
 		List<Fantasia> lista = impl.listAll(Fantasia.class, 100);
 		request.setAttribute("lista", lista);
-		request.getRequestDispatcher("/home.jsp").forward(request, response);
+		request.getRequestDispatcher("/paginas/index.jsp").forward(request,
+				response);
 
 	}
 

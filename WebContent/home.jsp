@@ -9,8 +9,7 @@
 </head>
 <body>
 
-	<a href="comprarFantasia.jsp">home</a>
-	<hr />
-	
+	<jsp:forward page="template/template.jsp" />
+
 </body>
 </html>

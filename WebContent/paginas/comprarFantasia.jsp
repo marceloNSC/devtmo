@@ -9,23 +9,20 @@
 </head>
 <body>
 
-		<c:if test="${empty lista}">
-			<center>
-				<p>Não existe fantasia para exibir.</p>
-			</center>
-		</c:if>
-		
-			<c:forEach items="${lista}" var="lista">
-				<div style="width: 80; height: 50;">
-					<img alt="" src="">
-					<p>${lista.nomeFantasia}</p>
-					<p>${lista.pesoFantasia }</p>
-					<p>$ R: 523,00</p>
-					<p>
-						<a href="home/detalhe/?p=${lista.idFantasia}">Detalhes</a>
-					</p>
-				</div>
-			</c:forEach>
-			
+	<c:if test="${empty lista}">
+		<center>
+			<p>Não existe fantasia para exibir.</p>
+		</center>
+	</c:if>
+
+	<c:forEach items="${lista}" var="lista">
+		<span style="width: 80; height: 50;"> <img alt="" src=""
+			width="60" height="120">
+			<p>${lista.nomeFantasia}</p>
+			<p>${lista.pesoFantasia }</p>
+			<p>$ R: 523,00</p> <a href="fantasia/comprar/?p=${lista.idFantasia}">Detalhes</a>		
+		</span>
+	</c:forEach>
+
 </body>
 </html>

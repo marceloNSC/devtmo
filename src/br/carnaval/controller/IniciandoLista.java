@@ -1,8 +1,10 @@
 package br.carnaval.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,12 +23,19 @@ public class IniciandoLista extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		ImplFantasia impl = new ImplFantasia(Conexao.getInstance());
-		List<Fantasia> lista = impl.listAll(Fantasia.class, 100);
-		request.setAttribute("lista", lista);
-		request.getRequestDispatcher("/paginas/index.jsp").forward(request,
-				response);
+		EntityManager co = null;
+		try {
+			co = Conexao.getInstance();
+			ImplFantasia impl = new ImplFantasia(co);
+			List<Fantasia> lista = impl.listAll(Fantasia.class, 100);
+			request.setAttribute("lista", lista);
+			request.getRequestDispatcher("/paginas/index.jsp").forward(request,
+					response);
+		} catch (Exception e) {
+			response.sendError(404);
+			// request.getRequestDispatcher("/paginas/error.jsp").forward(request,
+			// response);
+		}
 
 	}
 

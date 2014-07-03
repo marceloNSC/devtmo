@@ -26,8 +26,6 @@
 					</p>
 				</div>
 			</c:forEach>
-		
-
-	
+			
 </body>
 </html>

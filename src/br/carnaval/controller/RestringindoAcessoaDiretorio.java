@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebFilter(dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD,
-		DispatcherType.INCLUDE, DispatcherType.ERROR }, urlPatterns = { "/*" })
+		DispatcherType.INCLUDE, DispatcherType.ERROR }, urlPatterns = { "/kkkkk*" })
 public class RestringindoAcessoaDiretorio implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response,

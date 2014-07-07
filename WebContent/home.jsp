@@ -8,8 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<jsp:forward page="template/template.jsp" />
-
 </body>
 </html>
